@@ -2,6 +2,8 @@ const express = require('express')
 const app = express();
 const bodyParser = require('body-parser')
 
+const port = os.env.PORT
+
 app.use(bodyParser.json())
 
 
@@ -14,6 +16,6 @@ app.get('/api/data', (req, res) => {
     res.send(200)
 })
 
-app.listen(8080, () => {
-    console.log('Listening on 8080')
+app.listen(port, () => {
+    console.log(`Listening on ${port}`)
 })
