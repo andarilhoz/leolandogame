@@ -26,6 +26,7 @@ app.post('/api/data', async (req, res) => {
 
     if(!hasSender || !hasMessage || !hasCountry){
         res.status(400).json({error: "invalid body"})
+        return
     }
         
 
