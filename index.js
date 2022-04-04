@@ -2,6 +2,7 @@ const express = require('express')
 const app = express();
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 const conectionURI = process.env.CONNECTION_URI
 
@@ -15,6 +16,7 @@ const Message = mongoose.model('Messages', {
 
 const port = process.env.PORT
 
+app.use(cors())
 app.use(bodyParser.json())
 
 
