@@ -24,8 +24,10 @@ app.post('/api/data', async (req, res) => {
     const hasCountry = !!req.body.country
 
 
-    if(!hasSender || !hasMessage || !hasCountry)
-        return res.statusCode(400).message({"error": "invalid body"})
+    if(!hasSender || !hasMessage || !hasCountry){
+        res.status(400).json({error: "invalid body"})
+    }
+        
 
     const message = new Message({
         sender: req.body.sender,
