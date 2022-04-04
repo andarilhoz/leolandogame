@@ -5,8 +5,8 @@ const mongoose = require('mongoose')
 
 const conectionURI = process.env.CONNECTION_URI
 
-mongoose.connect(conectionURI)
-
+mongoose.connect(conectionURI, { useNewUrlParser: true, useUnifiedTopology: true })
+console.log(conectionURI)
 const Message = mongoose.model('Messages', {
     sender: String,
     message: String,
